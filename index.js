@@ -9,6 +9,11 @@ const PORT = process.env.PORT || 3000;
 const MONGO = process.env.MONGOURL;
 app.use(express.json());
 
+
+app.use(cors({
+  origin: '*'
+}));
+
 mongoose.connect(MONGO, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
